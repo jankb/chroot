@@ -16,13 +16,13 @@ sudo mount --bind /proc ./proc/
 sudo mount --bind /sys ./sys/
 sudo mount --bind /dev ./dev/
 ```
-* Copy the `reslov.conf`from host to `/etc` in `/minifs`
+* Copy the `resolv.conf`from host to `/etc` in `/minifs`
 ```
 cp /etc/resolv.conf ./etc
 ```
 * Run chroot to switch to Alpine Linux filesystem (guest)
 ```
-chroot . bin/ash -l
+sudo chroot . bin/ash -l
 ```
 * This should give you root in the guest filesystem
 ```
