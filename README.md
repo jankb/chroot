@@ -32,3 +32,15 @@ sudo chroot . bin/ash -l
 ```
 apk update
 ```
+
+
+### Stuff to try
+* Run graphical apps in chroot, e.g xeyes
+   * In guest (chroot environment) install xeyes
+```
+apk add xeyes
+```
+   * In host, allow local connections
+```
+xhost +local:
+```
