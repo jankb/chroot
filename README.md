@@ -13,8 +13,8 @@ malicious software or code.
 * When in the `minifs/` folder mount system folders needed for kernel:
 ```
 sudo mount --bind /proc ./proc/
-sudo mount -o bind /sys ./sys/
-sudo mount -o bind /dev ./dev/
+sudo mount --bind /sys ./sys/
+sudo mount --bind /dev ./dev/
 ```
 * Copy the `reslov.conf`from host to `/etc` in `/minifs`
 ```
