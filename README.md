@@ -10,25 +10,25 @@ malicious software or code.
 ### How to
 * Create a folder on the host system, e.g `minifs`
  Download the tarball from Alpine Linux for your host architecture into the folder and extract it `$ tar zxvf alpine-minirootfs-3.19.1_x86_64.tar.gz`
-* When in the `minifs` directory mount system folders needed for kernel:
+* When in the `minifs/` folder mount system folders needed for kernel:
 ```
-    ~/minifs$ sudo mount --bind /proc ./proc/
-    ~/minifs$ sudo mount -o bind /sys ./sys/
-    ~/minifs$ sudo mount -o bind /dev ./dev/
+sudo mount --bind /proc ./proc/
+sudo mount -o bind /sys ./sys/
+sudo mount -o bind /dev ./dev/
 ```
 * Copy the `reslov.conf`from host to `/etc` in `/minifs`
 ```
-     /minifs$ cp /etc/resolv.conf ./etc
+cp /etc/resolv.conf ./etc
 ```
 * Run chroot to switch to Alpine Linux filesystem (guest)
 ```
-    /minifs$ chroot . bin/ash -l
+chroot . bin/ash -l
 ```
 * This should give you root in the guest filesystem
 ```
-    /#
+/#
 ```
 * Try to update the packages to see that it works.
 ```
-    /# apk update
+apk update
 ```
