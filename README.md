@@ -44,3 +44,10 @@ apk add xeyes
 ```
 xhost +local:
 ```
+
+* Glxgears
+```
+apk add mesa-utils
+apk add mesa-dri-gallium
+glxgears
+```
